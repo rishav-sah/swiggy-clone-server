@@ -8,6 +8,12 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 
+app.get("/", async (req, res) => {
+  res.json({
+    "test": "Welcome to Swiggy Clone Server - Please refer to 'https://github.com/rishav-sah/swiggy-clone-server/blob/main/README.md' for detailed information"
+  })
+});
+
 // Restaurants API
 app.get("/api/restaurants", async (req, res) => {
   try {
@@ -45,8 +51,6 @@ app.get("/api/menu", async (req, res) => {
     const { 'page-type': page_type, 'complete-menu': complete_menu, lat, lng, submitAction, restaurantId } = req.query;
     console.log(req.query);
 
-    const url = `https://www.swiggy.com/dapi/menu/pl?page-type=${page_type}&complete-menu=${complete_menu}&lat=${lat}&lng=${lng}&submitAction=${submitAction}&restaurantId=${restaurantId}`;
-    
     const apiUrl = `${process.env.SWIGGY_MENU_URL}=${page_type}&complete-menu=${complete_menu}&lat=${lat}&lng=${lng}&submitAction=${submitAction}&restaurantId=${restaurantId}`;
 
     const response = await fetch(apiUrl, {

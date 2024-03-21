@@ -8,7 +8,12 @@
     "start": "node index.js",
     "build": "parcel build server.js --target node --out-dir dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishav-sah/swiggy-clone-server"
+  },
   "author": "Rishav Sah",
+  "keywords": ["Swiggy", "Swiggy API", "Swiggy Backend", "Swiggy Clone", "Swiggy Clone Server", "Restaurant Delivery Service", "Node.js Backend", "CORS Proxy", "Express Server", "API Proxy", "Cross-Origin Resource Sharing", "Restaurant Data API", "Menu Retrieval"],
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
